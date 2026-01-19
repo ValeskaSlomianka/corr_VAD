@@ -1,47 +1,53 @@
-# VAD for Multi‑Mic or Single‑Mic Talker Recordings
+# corr\_VAD
 
-This repository contains MATLAB code for **voice activity detection (VAD)** in multi‑talker conversations.  
-It supports two recording setups:
+**corr\_VAD** is a MATLAB implementation of a **voice activity detection (VAD)** algorithm designed for multi‑talker conversational recordings.  
+It supports different microphone layouts:
 
 *   **1 microphone per talker**, or
-*   **3 microphones per talker** (mouth + auxiliary mics)
+*   **3 microphones per talker** (mouth + 2 auxiliary microphones)
 
 The algorithm combines:
 
-*   **Energy‑based detection** using RMS thresholds derived from each recording
-*   **Crosstalk suppression** using RMS level differences and cross‑correlation
-*   Optional smoothing and post‑processing to merge short gaps and remove spurious bursts
+*   **Energy‑based thresholding** using RMS power
+*   **Cross‑correlation analysis** for crosstalk suppression
+*   **Automatic layout detection** (or optional manual configuration)
+*   **Post‑processing** to merge gaps and remove short bursts
 
-The core function is:
+The main function, `corrVAD.m`, computes:
 
-    corrVAD.m
+*   Windowed RMS power
+*   Cross‑correlation features
+*   Per‑talker speech activity decisions
+*   Speech onset indices
 
-which computes:
-
-*   Frame‑wise power (`power`)
-*   Cross‑correlations (`rs`, `lags`)
-*   Speech activity decisions (`actArr`)
-*   Speech segment onsets (`idx`)
-
-You can run the VAD with only a multi‑channel audio matrix and the sampling rate, or provide optional microphone layout information for more control.
+This implementation is based on the methodological description in the referenced publication but is original software licensed under Apache‑2.0.
 
 ***
 
 ## License
 
-This code is released under the **Apache License 2.0**.  
+This software is released under the **Apache License 2.0**.  
 See the `LICENSE` file for details.
 
 ***
 
-## Attribution (CC‑BY)
+## Attribution (CC‑BY Requirement)
 
-If you use this code in academic work, please cite the study whose VAD description inspired this implementation:
+This repository implements methods **inspired by** the following CC‑BY‑licensed article.  
+If you use this software in academic work, please cite:
 
 **Slomianka, V., May, T., & Dau, T. (2025).  
 *Adaptions in eye‑movement behavior during face‑to‑face communication in noise.*  
 Frontiers in Psychology. <https://doi.org/10.3389/fpsyg.2025.1584937>**
 
-This article is published under **CC‑BY**, which allows reuse with proper attribution.
+The article is published under **CC‑BY**, which permits reuse with attribution.
 
 ***
+
+## How to Cite This Repository
+
+A citation file is included. GitHub will display a **“Cite this repository”** option based on the `CITATION.cff`.
+
+***
+
+
