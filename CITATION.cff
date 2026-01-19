@@ -1,0 +1,35 @@
+
+cff-version: 1.2.0
+title: "corr_VAD"
+message: "If you use this software, please cite the repository and the related paper."
+authors:
+  - family-names: Slomianka
+    given-names: Valeska
+version: "1.0.0"
+license: Apache-2.0
+
+repository-code: "https://github.com/ValeskaSlomianka/corr_VAD"
+
+preferred-citation:
+  type: software
+  title: "corr_VAD: Voice Activity Detection for Multi‑Mic and Single‑Mic Talker Recordings"
+  version: "1.0.0"
+  url: "https://github.com/ValeskaSlomianka/corr_VAD"
+  license: Apache-2.0
+  authors:
+    - family-names: Slomianka
+      given-names: Valeska
+
+references:
+  - type: article
+    authors:
+      - family-names: Slomianka
+        given-names: Valeska
+      - family-names: May
+        given-names: Tobias
+      - family-names: Dau
+        given-names: Torsten
+    title: "Adaptions in eye‑movement behavior during face‑to‑face communication in noise"
+    journal: "Frontiers in Psychology"
+    year: 2025
+    doi: "10.3389/fpsyg.2025.1584937"
